@@ -1,20 +1,20 @@
 import { invoke } from "@tauri-apps/api/tauri";
 
-let greetInputEl: HTMLInputElement | null;
-let greetMsgEl: HTMLElement | null;
+let inputElement: HTMLInputElement | null;
+let outputElement: HTMLElement | null;
 
 async function run() {
-  if (greetMsgEl && greetInputEl) {
+  if (inputElement && outputElement) {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    greetMsgEl.textContent = await invoke("run", {
-      input: greetInputEl.value,
+    outputElement.textContent = await invoke("run", {
+      input: inputElement.value,
     });
   }
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  greetInputEl = document.querySelector("#input");
-  greetMsgEl = document.querySelector("#output");
+  inputElement = document.querySelector("#input");
+  outputElement = document.querySelector("#output");
   document.querySelector("#form")?.addEventListener("submit", (e) => {
     e.preventDefault();
     run();
