@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,14 +10,17 @@
 
   <body>
     <div class="container">
-      <h1>Welcome to Parith!</h1>
-
-      <form class="row" id="form">
-        <input id="input" placeholder="Enter Arith code..." />
-        <button type="submit">Run</button>
+      <form class="section" id="form">
+        <div class="section-header">
+          <div>Input</div>
+          <button type="submit">Run</button>
+        </div>
+        <textarea id="input"></textarea>
       </form>
-
-      <p id="output"></p>
+      <div class="section">
+        <div class="section-header">Result</div>
+        <textarea id="output" disabled></textarea>
+      </div>
     </div>
   </body>
 </html>
